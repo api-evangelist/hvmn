@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: searched
+source: https://ketone.com/.well-known/openid-configuration
+docs: https://shopify.dev/docs/api/customer
+summary:
+  types: [oauth2, openIdConnect]
+  oauth2_flows: [authorizationCode]
+  pkce: S256
+  notes: >-
+    Authentication is Shopify Customer Account (OAuth 2.0 + OpenID Connect).
+    The store publishes OIDC discovery at /.well-known/openid-configuration and
+    RFC 8414 authorization-server metadata at /.well-known/oauth-authorization-server.
+    Storefront read endpoints (products.json, collections, search) require no
+    authentication; the UCP MCP commerce endpoint transacts under buyer approval.
+schemes:
+  - name: ShopifyCustomerAccount
+    type: openIdConnect
+    issuer: https://shopify.com/authentication/25727336499
+    openIdConnectUrl: https://ketone.com/.well-known/openid-configuration
+    authorizationUrl: https://account.ketone.com/authentication/oauth/authorize
+    tokenUrl: https://account.ketone.com/authentication/oauth/token
+    endSessionUrl: https://account.ketone.com/authentication/logout
+    jwksUri: https://account.ketone.com/authentication/.well-known/jwks.json
+    responseTypes: [code]
+    grantTypes:
+      - authorization_code
+      - refresh_token
+      - urn:ietf:params:oauth:grant-type:jwt-bearer
+    tokenEndpointAuthMethods: [client_secret_basic]
+    codeChallengeMethods: [S256]
+    idTokenSigningAlg: [RS256]
+    sources: [well-known/hvmn-openid-configuration.json]
