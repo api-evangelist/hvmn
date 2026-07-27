@@ -1,7 +1,29 @@
 aid: hvmn
 name: HVMN
-description: HVMN is a company surfaced as a portfolio company of a16z and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  HVMN (Health Via Modern Nutrition), now operating as Ketone-IQ, is an
+  a16z-backed human-performance nutrition company founded by Geoffrey Woo and
+  Michael Brandt. It pioneered exogenous ketone products, including the
+  Ketone-IQ drinkable ketone shot and ketone ester, sold direct-to-consumer
+  through its Shopify-powered online store at ketone.com (hvmn.com now redirects
+  to ketone.com). The storefront is agent-native: it publishes /llms.txt and
+  /agents.md agent instructions and implements the Universal Commerce Protocol
+  (UCP) with a live MCP endpoint for agent-driven catalog search, cart, and
+  buyer-approved checkout, backed by Shopify Customer Account OAuth 2.0 / OpenID
+  Connect authentication.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://ketone.com/cdn/shop/files/OG_Home_Page_1200x1200.jpg?v=1781009088
 url: https://raw.githubusercontent.com/api-evangelist/hvmn/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +33,79 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Health
+- Nutrition
+- Ketones
+- Supplements
+- E-Commerce
+- Shopify
+- Agentic Commerce
+- Consumer
+- MCP
+apis:
+- name: Ketone-IQ Agent Commerce (UCP)
+  description: >-
+    Agent-native commerce surface for the Ketone-IQ (HVMN) Shopify store: a
+    Universal Commerce Protocol (UCP) merchant profile and live MCP endpoint for
+    catalog search, cart, and buyer-approved checkout, plus unauthenticated
+    storefront product/collection JSON and Shopify Customer Account OAuth/OIDC.
+  humanURL: https://ketone.com
+  baseURL: https://ketone.com
+  tags:
+  - Agentic Commerce
+  - MCP
+  - Shopify
+  - E-Commerce
+  properties:
+  - type: LLMsTxt
+    url: llms/hvmn-llms.txt
+  - type: MCPServer
+    url: mcp/hvmn-mcp.yml
+  - type: WellKnown
+    url: well-known/hvmn-well-known.yml
+  - type: Authentication
+    url: authentication/hvmn-authentication.yml
+  - type: OAuthScopes
+    url: scopes/hvmn-scopes.yml
+  - type: Conformance
+    url: conformance/hvmn-conformance.yml
+common:
+- type: DomainSecurity
+  url: security/hvmn-domain-security.yml
+- type: LLMsTxt
+  url: llms/hvmn-llms.txt
+- type: MCPServer
+  url: mcp/hvmn-mcp.yml
+- type: WellKnown
+  url: well-known/hvmn-well-known.yml
+- type: Authentication
+  url: authentication/hvmn-authentication.yml
+- type: OAuthScopes
+  url: scopes/hvmn-scopes.yml
+- type: Conformance
+  url: conformance/hvmn-conformance.yml
+- type: Documentation
+  url: https://ketone.com/agents.md
+- type: TermsOfService
+  url: https://ketone.com/policies/terms-of-service
+- type: PrivacyPolicy
+  url: https://ketone.com/policies/privacy-policy
+- type: Login
+  url: https://account.ketone.com
+- type: Pricing
+  url: https://ketone.com/collections/all
+- type: Website
+  url: https://ketone.com
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

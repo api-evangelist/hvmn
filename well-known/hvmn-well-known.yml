@@ -1,0 +1,29 @@
+generated: '2026-07-19'
+method: searched
+source: https://ketone.com/.well-known/
+host: https://ketone.com
+notes: >-
+  HVMN operates its direct-to-consumer store as Ketone-IQ on ketone.com (hvmn.com
+  301-redirects to ketone.com). The store is a Shopify-hosted, agent-native
+  storefront. OpenID Connect / OAuth authorization-server discovery is Shopify
+  Customer Account authentication; the store also publishes a Universal Commerce
+  Protocol (UCP) merchant profile at /.well-known/ucp.
+documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: hvmn-openid-configuration.json
+    note: Shopify Customer Account OIDC discovery
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: hvmn-oauth-authorization-server.json
+    note: RFC 8414 authorization-server metadata (mirrors OIDC config)
+  - path: /.well-known/ucp
+    status: 200
+    file: hvmn-ucp.json
+    note: Universal Commerce Protocol merchant profile (agent commerce)
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404

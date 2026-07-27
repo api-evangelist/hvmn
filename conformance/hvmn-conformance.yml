@@ -1,0 +1,36 @@
+generated: '2026-07-19'
+method: derived
+source: well-known/ (openid-configuration, oauth-authorization-server, ucp)
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: >-
+      Authorization-server metadata at /.well-known/oauth-authorization-server
+      (RFC 8414) advertises authorization_code + refresh_token grants with PKCE S256.
+  - id: oidc
+    conforms: true
+    evidence: >-
+      OpenID Connect discovery document at /.well-known/openid-configuration with
+      RS256-signed id tokens and standard claims (iss, sub, aud, exp, iat, email).
+  - id: rfc8414-authorization-server-metadata
+    conforms: true
+    evidence: /.well-known/oauth-authorization-server returns 200 with issuer/token/authorization endpoints.
+  - id: pkce
+    conforms: true
+    evidence: code_challenge_methods_supported includes S256.
+  - id: ucp-universal-commerce-protocol
+    conforms: true
+    evidence: /.well-known/ucp advertises UCP versions 2026-04-08 and 2026-01-23 with shopping services.
+  - id: mcp-model-context-protocol
+    conforms: true
+    evidence: Published MCP endpoint at /api/ucp/mcp (JSON-RPC 2.0) for agent commerce.
+  - id: llms-txt
+    conforms: true
+    evidence: /llms.txt and /agents.md publish agent instructions for the store.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: No published API spec using application/problem+json observed.
+  - id: fhir-r4
+    conforms: false
+  - id: fapi
+    conforms: false
