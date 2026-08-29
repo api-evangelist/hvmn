@@ -11,6 +11,17 @@ description: >-
   (UCP) with a live MCP endpoint for agent-driven catalog search, cart, and
   buyer-approved checkout, backed by Shopify Customer Account OAuth 2.0 / OpenID
   Connect authentication.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
