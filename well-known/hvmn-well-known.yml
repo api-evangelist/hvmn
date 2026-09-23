@@ -2,13 +2,13 @@ generated: '2026-07-19'
 method: searched
 source: https://ketone.com/.well-known/
 host: https://ketone.com
-notes: >-
-  HVMN operates its direct-to-consumer store as Ketone-IQ on ketone.com (hvmn.com
-  301-redirects to ketone.com). The store is a Shopify-hosted, agent-native
-  storefront. OpenID Connect / OAuth authorization-server discovery is Shopify
-  Customer Account authentication; the store also publishes a Universal Commerce
+notes: HVMN operates its direct-to-consumer store as Ketone-IQ on ketone.com (hvmn.com 301-redirects to
+  ketone.com). The store is a Shopify-hosted, agent-native storefront. OpenID Connect / OAuth authorization-server
+  discovery is Shopify Customer Account authentication; the store also publishes a Universal Commerce
   Protocol (UCP) merchant profile at /.well-known/ucp.
-documents:
+hosts:
+- host: https://ketone.com
+  documents:
   - path: /.well-known/openid-configuration
     status: 200
     file: hvmn-openid-configuration.json
@@ -27,3 +27,8 @@ documents:
     status: 404
   - path: /.well-known/ai-plugin.json
     status: 404
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
