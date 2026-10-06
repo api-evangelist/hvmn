@@ -44,7 +44,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-19'
+modified: '2026-10-06'
 tags:
 - Company
 - Health
@@ -86,6 +86,10 @@ apis:
   x-platform: shopify
   x-platform-surface: ucp
 common:
+- url: https://ketone.com/blogs/blog
+  type: Blog
+- url: https://ketone.com/blogs/blog.atom
+  type: BlogRSS
 - type: DomainSecurity
   url: security/hvmn-domain-security.yml
 - type: LLMsTxt
