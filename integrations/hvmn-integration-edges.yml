@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/hvmn/integrations
+- https://n8n.io/integrations/hvmn/
+- https://composio.dev/toolkits/hvmn
+- https://monid.ai/tools/hvmn
+checked:
+- https://composio.dev/toolkits/hvmn
+- https://monid.ai/tools/hvmn
+- https://n8n.io/integrations/hvmn/
+- https://zapier.com/apps/hvmn/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
